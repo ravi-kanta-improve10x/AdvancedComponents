@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class TeamActivity extends AppCompatActivity {
-    public ArrayList<String> namesList;
+    public ArrayList<String> TeamsList;
     public Spinner teamNamesSp;
     public ArrayAdapter<String> arrayAdapter;
 
@@ -42,14 +42,14 @@ public class TeamActivity extends AppCompatActivity {
     }
 
     public void setData() {
-        namesList = new ArrayList<>();
-        namesList.add("Ravi");
+         TeamsList= new ArrayList<>();
+        TeamsList.add("Ravi");
 
     }
 
     public void setNames() {
         teamNamesSp = findViewById(R.id.team_names_sp);
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, namesList);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,TeamsList);
         teamNamesSp.setAdapter(arrayAdapter);
 
     }

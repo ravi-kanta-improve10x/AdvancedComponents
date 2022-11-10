@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
         handleDobBtn();
         handleTeamBtn();
         handleAddMembers();
+        handleAddListBtn();
     }
 
     public void handleLuckyNumberBtn() {
@@ -53,6 +54,14 @@ public class HomeActivity extends AppCompatActivity {
         Button addMembersBtn = findViewById(R.id.addmembers_btn);
         addMembersBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this,AddMembersActivity.class);
+            startActivity(intent);
+        });
+
+    }
+    public void handleAddListBtn() {
+        Button addListBtn = findViewById(R.id.teamlist_btn);
+        addListBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this,TeamListActivity.class);
             startActivity(intent);
         });
 

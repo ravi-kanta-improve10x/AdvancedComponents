@@ -12,6 +12,7 @@
         android:id="@+id/lucky_numbers_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
         android:text="Lucky Numbers"
         android:textAllCaps="false" />
 
@@ -19,6 +20,7 @@
         android:id="@+id/location_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
         android:text="Location"
         android:textAllCaps="false" />
 
@@ -26,6 +28,7 @@
         android:id="@+id/dob_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
         android:text="Date of birth"
         android:textAllCaps="false" />
 
@@ -33,13 +36,24 @@
         android:id="@+id/team_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
         android:text="Team"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/teamlist_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
+        android:text="TeamList"
         android:textAllCaps="false" />
 
     <Button
         android:id="@+id/addmembers_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
         android:text="Add Members"
         android:textAllCaps="false" />
+
 </LinearLayout>

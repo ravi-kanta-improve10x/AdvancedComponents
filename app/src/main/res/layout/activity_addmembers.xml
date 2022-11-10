@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#00BCD4"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".AddMembersActivity">
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
+            android:backgroundTint="#00BCD4"
             android:text="Add"
             android:textAllCaps="false" />
 
