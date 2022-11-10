@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class TeamListActivity extends AppCompatActivity {
     public ArrayList<String> namesList;
-    public ListView teamNamesLv ;
+    public ListView teamNamesLv;
     public ArrayAdapter<String> arrayAdapter;
 
 
@@ -25,8 +25,20 @@ public class TeamListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_team_list);
         getSupportActionBar().setTitle("Team List");
         handleAddButton();
+        handleDeleteButton();
         setData();
         setNames();
+    }
+
+    public void handleDeleteButton() {
+        Button deleteBtn = findViewById(R.id.memebers_names_delete_btn);
+        deleteBtn.setOnClickListener(view -> {
+            EditText enterNameTxt = findViewById(R.id.members_name_txt);
+            String enterName = enterNameTxt.getText().toString();
+            arrayAdapter.remove(enterName);
+            arrayAdapter.notifyDataSetChanged();
+            enterNameTxt.setText("");
+        });
     }
 
     public void handleAddButton() {
@@ -39,28 +51,22 @@ public class TeamListActivity extends AppCompatActivity {
             enterNameTxt.setText("");
         });
     }
+
     public void setData() {
         namesList = new ArrayList<>();
         namesList.add("Viswanath");
         namesList.add("Renuka");
-
     }
+
     public void setNames() {
         teamNamesLv = findViewById(R.id.names_lv);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, namesList);
         teamNamesLv.setAdapter(arrayAdapter);
-        teamNamesLv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(TeamListActivity.this, "NameList :"+ namesList.get(position), Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+        teamNamesLv.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(this, "clicked : " + namesList.get(position), Toast.LENGTH_SHORT).show();
+            String enterName = namesList.get(position);
+            EditText enterNameTxt = findViewById(R.id.members_name_txt);
+            enterNameTxt.setText(enterName);
         });
-
     }
 }
