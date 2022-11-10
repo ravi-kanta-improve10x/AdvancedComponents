@@ -35,21 +35,23 @@ public class TeamActivity extends AppCompatActivity {
         teamBtn.setOnClickListener(view -> {
             EditText enterNameTxt = findViewById(R.id.enter_name_txt);
             String enterName = enterNameTxt.getText().toString();
-            arrayAdapter.add(enterName);
-            arrayAdapter.notifyDataSetChanged();
+            if (enterName.equals("") == false) {
+                arrayAdapter.add(enterName);
+                arrayAdapter.notifyDataSetChanged();
+            }
             enterNameTxt.setText("");
         });
     }
 
     public void setData() {
-         TeamsList= new ArrayList<>();
+        TeamsList = new ArrayList<>();
         TeamsList.add("Ravi");
 
     }
 
     public void setNames() {
         teamNamesSp = findViewById(R.id.team_names_sp);
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,TeamsList);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, TeamsList);
         teamNamesSp.setAdapter(arrayAdapter);
 
     }
