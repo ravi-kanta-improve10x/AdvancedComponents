@@ -46,8 +46,10 @@ public class TeamListActivity extends AppCompatActivity {
         teamBtn.setOnClickListener(view -> {
             EditText enterNameTxt = findViewById(R.id.members_name_txt);
             String enterName = enterNameTxt.getText().toString();
-            arrayAdapter.add(enterName);
-            arrayAdapter.notifyDataSetChanged();
+            if(enterName.equals("") == false){
+                arrayAdapter.add(enterName);
+                arrayAdapter.notifyDataSetChanged();
+            }
             enterNameTxt.setText("");
         });
     }
